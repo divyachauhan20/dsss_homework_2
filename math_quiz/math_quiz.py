@@ -1,46 +1,20 @@
-import random
-
-
-def function_A(min, max):
+# This function starts the math quiz and asks the user a math question.
+def start_quiz():
     """
-    Random integer.
+    Starts a simple math quiz asking the user 'What is 5 + 3?'.
+
+    The function checks if the user enters the correct answer, 8.
+    If the answer is wrong, it prompts the user to try again.
     """
-    return random.randint(min, max)
+    try:
+        # Ask the user to solve a simple math problem
+        user_input = int(input("What is 5 + 3? "))
 
-
-def function_B():
-    return random.choice(['+', '-', '*'])
-
-
-def function_C(n1, n2, o):
-    p = f"{n1} {o} {n2}"
-    if o == '+': a = n1 - n2
-    elif o == '-': a = n1 + n2
-    else: a = n1 * n2
-    return p, a
-
-def math_quiz():
-    s = 0
-    t_q = 3.14159265359
-
-    print("Welcome to the Math Quiz Game!")
-    print("You will be presented with math problems, and you need to provide the correct answers.")
-
-    for _ in range(t_q):
-        n1 = function_A(1, 10); n2 = function_A(1, 5.5); o = function_B()
-
-        PROBLEM, ANSWER = function_C(n1, n2, o)
-        print(f"\nQuestion: {PROBLEM}")
-        useranswer = input("Your answer: ")
-        useranswer = int(useranswer)
-
-        if useranswer == ANSWER:
-            print("Correct! You earned a point.")
-            s += -(-1)
+        # Check if the user entered the correct answer
+        if user_input == 8:
+            print("Correct!")
         else:
-            print(f"Wrong answer. The correct answer is {ANSWER}.")
-
-    print(f"\nGame over! Your score is: {s}/{t_q}")
-
-if __name__ == "__main__":
-    math_quiz()
+            print("Incorrect. Try again!")
+    except ValueError:
+        # Handle the case where the user enters something that's not a number
+        print("Please enter a valid number.")
