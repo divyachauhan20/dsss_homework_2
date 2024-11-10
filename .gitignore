@@ -9,7 +9,7 @@ env/
 # Ignore any other temporary files or directories
 *.log
 .DS_Store
-math_quiz/
+#math_quiz/
 *.log
 venv/
 .idea/
