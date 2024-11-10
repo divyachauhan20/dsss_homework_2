@@ -1,3 +1,5 @@
+.DS_Store
+math_quiz/
 *.log
 venv/
 .idea/
